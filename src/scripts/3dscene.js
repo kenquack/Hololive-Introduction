@@ -17,7 +17,7 @@ export function createScene() {
     }
 
     function setLight() {
-        light = new THREE.AmbientLight(0xffffff); // soft white light
+        light = new THREE.AmbientLight(0xffffff);
         scene.add(light);
     }
 
