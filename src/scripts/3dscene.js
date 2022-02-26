@@ -10,7 +10,7 @@ export function createScene() {
     let light;
 
     let Gura, Ame, Ina, Cali, Kiara;
-
+    
     function init() {
         scene.background = new THREE.Color('lightblue');
         camera.position.set(0, 10, 20);
@@ -75,20 +75,24 @@ export function createScene() {
     function hoverModel() {
         raycaster.setFromCamera(mouse, camera);
         const intersects = raycaster.intersectObjects(scene.children);
-        for (let i = 0; i < intersects.length; i++) {
-            intersects[i].object.visible = false;
-        }
+        if (intersects.length > 1) {
+            console.log(intersects[0].object.material.name);
+        };
     }
+
+
+    
+    // window.setInterval(hoverModel.bind(this), 1500);
 
     function animate() {
         requestAnimationFrame(animate);
         // const mixer = new THREE.AnimationMixer(Gura); 
         // console.log(mixer.getRoot()); <--- getting null
-        rotate(Gura);
-        rotate(Ina);
-        rotate(Kiara);
-        rotate(Cali);
-        rotate(Ame);
+        // rotate(Gura);
+        // rotate(Ina);
+        // rotate(Kiara);
+        // rotate(Cali);
+        // rotate(Ame);
 
         renderer.render(scene, camera);
     }
@@ -98,14 +102,14 @@ export function createScene() {
     loadGLTF();
     animate();
 
-
-
     window.addEventListener( 'resize', onWindowResize, false );
     window.addEventListener( 'pointermove', onPointerMove );
 
+    window.addEventListener( 'click', hoverModel) ////how to set interval on an eventlistener?
+
     function rotate(char) {
         if (char && char.rotation) {
-            char.rotation.y -= 0.005;
+            char.rotation.y -= 0.02;
         };
     };
     
@@ -119,7 +123,7 @@ export function createScene() {
     };
 
     function onPointerMove( event ) {
-        mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-        mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+        mouse.x = ( (event.offsetX) / renderer.domElement.width ) * 2 - 1;
+        mouse.y = -( (event.offsetY) / renderer.domElement.height ) * 2 + 1;
     };
 }
