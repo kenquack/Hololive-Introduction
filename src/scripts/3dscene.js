@@ -1,118 +1,100 @@
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 export function createScene() {
-    const renderer = new THREE.WebGLRenderer();
-    const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000);
-    const scene = new THREE.Scene();
-    const mouse = new THREE.Vector2();
-    const raycaster = new THREE.Raycaster();
-    let light;
+    let renderer, scene, camera, composer, circle, skelet, particle;
 
-    let Gura, Ame, Ina, Cali, Kiara;
-    
+    window.onload = function () {
+        init();
+        animate();
+    };
+
     function init() {
-        scene.background = new THREE.Color('lightblue');
-        camera.position.set(0, 10, 20);
+        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
-    }
+        renderer.autoClear = false;
+        renderer.setClearColor(0x000000, 0.0);
+        document.getElementById('canvas').appendChild(renderer.domElement);
 
-    function setLight() {
-        light = new THREE.AmbientLight(0xffffff);
-        scene.add(light);
-    }
+        scene = new THREE.Scene();
 
-    function loadGLTF() {
-        let modelLoader = new GLTFLoader();
+        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
+        camera.position.z = 400;
+        scene.add(camera);
 
-        modelLoader.load('assets/models/smoller_gura_-_gawr_gura_holomyth/scene.gltf', (gltf) => {
-            Gura = gltf.scene;
-            Gura.scale.set(0.2,0.2,0.2);
-            Gura.position.x = 0;
-            Gura.position.y = 10;
-            Gura.position.z = 15;
-            scene.add(Gura);
+        circle = new THREE.Object3D();
+        skelet = new THREE.Object3D();
+        particle = new THREE.Object3D();
+
+        scene.add(circle);
+        scene.add(skelet);
+        scene.add(particle);
+
+        let geometry = new THREE.TetrahedronGeometry(2, 0);
+        let geom = new THREE.IcosahedronGeometry(5, 1);
+        let geom2 = new THREE.IcosahedronGeometry(12, 1);
+
+        let material = new THREE.MeshPhongMaterial({
+            color: 0xffffff,
+            flatShading: THREE.FlatShading
         });
 
-        modelLoader.load('assets/models/smol_ame_-_amelia_watson_holomyth/scene.gltf', (gltf) => {
-            Ame = gltf.scene;
-            Ame.scale.set(0.55,0.55,0.55);
-            Ame.position.x = 0.5;
-            Ame.position.y = 10;
-            Ame.position.z = 15;
-            scene.add(Ame);
+        for (let i = 0; i < 1000; i++) {
+            let mesh = new THREE.Mesh(geometry, material);
+            mesh.position.set(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5).normalize();
+            mesh.position.multiplyScalar(90 + (Math.random() * 700));
+            mesh.rotation.set(Math.random() * 2, Math.random() * 2, Math.random() * 2);
+            particle.add(mesh);
+        }
+
+        let mat = new THREE.MeshPhongMaterial({
+            color: 0xffffff,
+            flatShading: THREE.FlatShading
         });
 
-        modelLoader.load('assets/models/smol_ina_-_ninomae_inanis_holomyth/scene.gltf', (gltf) => {
-            Ina = gltf.scene;
-            Ina.scale.set(0.58,0.58,0.58);
-            Ina.position.x = -0.5;
-            Ina.position.y = 10;
-            Ina.position.z = 15;
-            scene.add(Ina);
+        let mat2 = new THREE.MeshPhongMaterial({
+            color: 0xffffff,
+            wireframe: true,
+            side: THREE.DoubleSide
         });
 
-        modelLoader.load('assets/models/smol_calli_-_mori_calliope_holomyth/scene.gltf', (gltf) => {
-            Cali = gltf.scene;
-            Cali.scale.set(0.2,0.2,0.2);
-            Cali.position.x = -1;
-            Cali.position.y = 10;
-            Cali.position.z = 15;
-            scene.add(Cali);
-        });
+        let planet = new THREE.Mesh(geom, mat);
+        planet.scale.x = planet.scale.y = planet.scale.z = 16;
+        circle.add(planet);
 
-        modelLoader.load('assets/models/smol_kiara_-_takanashi_kiara_holomyth/scene.gltf', (gltf) => {
-            Kiara = gltf.scene;
-            Kiara.scale.set(0.55,0.55,0.55);
-            Kiara.position.x = 1;
-            Kiara.position.y = 10;
-            Kiara.position.z = 15;
-            scene.add(Kiara);
-        });
-    }
+        let planet2 = new THREE.Mesh(geom2, mat2);
+        planet2.scale.x = planet2.scale.y = planet2.scale.z = 10;
+        skelet.add(planet2);
 
-    function hoverModel() {
-        raycaster.setFromCamera(mouse, camera);
-        const intersects = raycaster.intersectObjects(scene.children);
-        if (intersects.length > 1) {
-            console.log(intersects[0].object.material.name);
+        let ambientLight = new THREE.AmbientLight(0x999999 );
+        scene.add(ambientLight);
+
+        let lights = [];
+            lights[0] = new THREE.DirectionalLight( 0xffffff, 1 );
+            lights[0].position.set( 1, 0, 0 );
+            lights[1] = new THREE.DirectionalLight( 0x11E8BB, 1 );
+            lights[1].position.set( 0.75, 1, 0.5 );
+            lights[2] = new THREE.DirectionalLight( 0x8200C9, 1 );
+            lights[2].position.set( -0.75, -1, 0.5 );
+            scene.add( lights[0] );
+            scene.add( lights[1] );
+            scene.add( lights[2] );
+
+            
         };
-    }
-
-
-    
-    // window.setInterval(hoverModel.bind(this), 1500);
-
-    function animate() {
+    function animate(){
         requestAnimationFrame(animate);
-        // const mixer = new THREE.AnimationMixer(Gura); 
-        // console.log(mixer.getRoot()); <--- getting null
-        // rotate(Gura);
-        // rotate(Ina);
-        // rotate(Kiara);
-        // rotate(Cali);
-        // rotate(Ame);
-
-        renderer.render(scene, camera);
-    }
-
-    init();
-    setLight();
-    loadGLTF();
-    animate();
-
-    window.addEventListener( 'resize', onWindowResize, false );
-    window.addEventListener( 'pointermove', onPointerMove );
-
-    window.addEventListener( 'click', hoverModel) ////how to set interval on an eventlistener?
-
-    function rotate(char) {
-        if (char && char.rotation) {
-            char.rotation.y -= 0.02;
-        };
+        particle.rotation.x += 0.0010;
+        particle.rotation.y -= 0.0020;
+        circle.rotation.x -= 0.0020;
+        circle.rotation.y -= 0.0030;
+        skelet.rotation.x -= 0.0010;
+        skelet.rotation.y += 0.0020;
+        renderer.clear();
+        renderer.render(scene, camera)
     };
     
+    window.addEventListener( 'resize', onWindowResize, false );
+
     function onWindowResize(){
     
         camera.aspect = window.innerWidth / window.innerHeight;
@@ -121,9 +103,5 @@ export function createScene() {
         renderer.setSize( window.innerWidth, window.innerHeight );
     
     };
+};
 
-    function onPointerMove( event ) {
-        mouse.x = ( (event.offsetX) / renderer.domElement.width ) * 2 - 1;
-        mouse.y = -( (event.offsetY) / renderer.domElement.height ) * 2 + 1;
-    };
-}
