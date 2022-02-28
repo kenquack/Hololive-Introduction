@@ -1,5 +1,7 @@
 import { userKeys as usersHash } from "./users";
 import { userPictures } from "./users";
+import { userTwitter } from "./users";
+import { userYoutube } from "./users";
 
 export function createElements() {
 
@@ -42,7 +44,34 @@ export function createElements() {
         };
     };
 
+    function addLinks() {
+        let users = Object.keys(usersHash);
+
+        for(let i = 0; i < users.length; i++) {
+            let userDiv = document.getElementById(`${users[i]}`);
+            addTwitter(userDiv);
+            addYoutube(userDiv);
+        }
+    }
+
+    function addTwitter(user){
+        let a = document.createElement('a');
+        a.innerHTML = "Twitter";
+        a.href = userTwitter[user.id];
+        a.setAttribute('target', '_blank');
+        user.appendChild(a);
+    };
+
+    function addYoutube(user){
+        let a = document.createElement('a');
+        a.innerHTML = "Youtube";
+        a.href = userYoutube[user.id];
+        a.setAttribute('target', '_blank');
+        user.appendChild(a);
+    };
+
     
     createButtons();
     addListeners();
+    addLinks();
 };
