@@ -21,12 +21,10 @@ export function createElements() {
         btn.src = userPictures[user];
     };
 
-    //toggle attribute
     function onClick() {
-        console.log(this.id.split("-")[0]);
         let id = this.id.split("-")[0];
         let div = document.getElementById(id)
-        console.log(div);
+        div.toggleAttribute('hidden');
     };
 
     function addListeners(){
@@ -39,5 +37,4 @@ export function createElements() {
     
     createButtons();
     addListeners();
-    
 };

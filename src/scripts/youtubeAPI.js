@@ -13,8 +13,12 @@ export function loadYoutubeStats() {
             let user = document.createElement('div');
             let userList = document.createElement('ul');
             
+            //user div
             user.innerHTML = users[i];
             user.setAttribute('id', `${users[i]}`);
+            user.setAttribute('hidden', true);
+
+            //user ul
             userList.setAttribute('id', `${users[i]}-list`);
             document.body.appendChild(container);
             container.appendChild(user);

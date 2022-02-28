@@ -22,6 +22,7 @@ h1 {
 }
 
 #characters > * {
+  position: absolute;
   margin: auto;
   transform: translateX(800px);
   transform: translateY(-900px);
