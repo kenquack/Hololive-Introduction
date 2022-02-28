@@ -22,3 +22,17 @@ h1 {
   font-family: "Courier New", Courier, monospace;
   color: white;
 }
+
+#characters > * {
+  margin: auto;
+  transform: translateX(800px);
+  transform: translateY(-900px);
+  height: 400px;
+  width: 400px;
+  background: yellow;
+}
+
+.profile-icon {
+  height: 80px;
+  width: 80px;
+}

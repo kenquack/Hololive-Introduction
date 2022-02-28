@@ -2,10 +2,10 @@ import { userKeys } from "./users";
 
 export function loadYoutubeStats() {
 
-    const youtubeKey = 'AIzaSyCAs8UrQqjxDI8-lP2gUh-iq0pyhUmQnZw';
+    const youtubeKey = 'AIzaSyCAs8UrQqjxDI8-lP2gUh-iq0pyhUmQnZw'; //API key
 
-    function setupHTML(usersKeys) {
-        let users = Object.keys(usersKeys);
+    function setupHTML() {
+        let users = Object.keys(userKeys);
         let container = document.createElement('div');
         container.setAttribute('id', 'characters');
 
@@ -52,5 +52,5 @@ export function loadYoutubeStats() {
         });
     };
 
-    setupHTML(userKeys);
+    setupHTML();
 };

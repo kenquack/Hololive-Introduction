@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
 export function createScene() {
-    let renderer, scene, camera, composer, circle, skelet, particle;
+    let renderer, scene, camera, circle, skelet, particle;
 
     window.onload = function () {
         init();
