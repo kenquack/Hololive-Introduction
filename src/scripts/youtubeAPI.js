@@ -16,6 +16,7 @@ export function loadYoutubeStats() {
             //user div
             user.innerHTML = users[i];
             user.setAttribute('id', `${users[i]}`);
+            user.setAttribute('class', 'character');
             user.setAttribute('hidden', true);
 
             //user ul

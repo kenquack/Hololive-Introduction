@@ -1,5 +1,5 @@
 import { userKeys as usersHash } from "./users";
-import { userPictures } from "./pictures";
+import { userPictures } from "./users";
 
 export function createElements() {
 
@@ -22,8 +22,16 @@ export function createElements() {
     };
 
     function onClick() {
+        let icons = Array.from( document.getElementsByClassName('character') );
         let id = this.id.split("-")[0];
         let div = document.getElementById(id)
+        let skipIndex = icons.indexOf(div)
+        for(let i = 0; i < icons.length; i++) {
+            if (i !== skipIndex) {
+                icons[i].setAttribute('hidden', true);
+            };
+        };
+
         div.toggleAttribute('hidden');
     };
 

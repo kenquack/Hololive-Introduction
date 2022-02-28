@@ -26,8 +26,9 @@ h1 {
 #characters > * {
   position: absolute;
   margin: auto;
-  transform: translateX(800px);
-  transform: translateY(-900px);
+  align-items: center;
+  top: 400px;
+  right: 1000px;
   height: 400px;
   width: 400px;
   background: yellow;
