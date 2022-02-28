@@ -83,12 +83,12 @@ export function createScene() {
         };
     function animate(){
         requestAnimationFrame(animate);
-        particle.rotation.x += 0.0010;
-        particle.rotation.y -= 0.0020;
-        circle.rotation.x -= 0.0020;
-        circle.rotation.y -= 0.0030;
-        skelet.rotation.x -= 0.0010;
-        skelet.rotation.y += 0.0020;
+        particle.rotation.x += 0.0005;
+        particle.rotation.y -= 0.0010;
+        circle.rotation.x -= 0.0010;
+        circle.rotation.y -= 0.0010;
+        skelet.rotation.x -= 0.0001;
+        skelet.rotation.y += 0.0010;
         renderer.clear();
         renderer.render(scene, camera)
     };
