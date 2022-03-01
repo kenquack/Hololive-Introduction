@@ -44,6 +44,12 @@ h1 {
   width: 10%;
 }
 
+.char-photo {
+  float: right;
+  height: 90%;
+  width: 40%;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -96,4 +102,30 @@ ul {
   display: flex;
   padding-top: 15px;
   padding-right: 15px;
+}
+
+div::-webkit-scrollbar {
+  width: 10px;
+}
+
+div::-webkit-scrollbar-track {
+  background: -moz-linear-gradient(top, #11e8bb 0%, #ca68ff 100%);
+  background: -webkit-linear-gradient(top, #11e8bb 0%, #ca68ff 100%);
+  background: linear-gradient(to bottom, #11e8bb 0%, #ca68ff 100%);
+  border-radius: 10px;
+}
+
+div::-webkit-scrollbar-thumb {
+  background: #6ce2e2;
+  border-radius: 10px;
+}
+
+div::-webkit-scrollbar-thumb:hover {
+  background: #48adad;
+  border-radius: 10px;
+}
+
+div::-webkit-scrollbar-thumb:active {
+  background: #48adad;
+  border-radius: 10px;
 }
