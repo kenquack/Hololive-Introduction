@@ -7,19 +7,19 @@ export let userKeys = {
 };
 
 export let userIcons = {
-    'Kafu': 'assets/profile-icons/kafu-profile-icon.jpg',
+    'Kafu': 'assets/profile-icons/kafu-profile-icon.png',
     'Hoshimati Suisei': 'assets/profile-icons/suisei-profile-icon.jpg',
     'Usada Pekora': 'assets/profile-icons/pekora-profile-icon.jpg',
-    'Pomu Rainpuff': 'assets/profile-icons/pomu-profile-icon.jpg',
+    'Pomu Rainpuff': 'assets/profile-icons/pomu-profile-icon.png',
     'Nakiri Ayame': 'assets/profile-icons/ayame-profile-icon.png'
 };
 
 export let userPhotos = {
-    'Kafu': 'assets/character-pics/kafu-pic.jpg',
+    'Kafu': 'assets/character-pics/kafu-pic.png',
     'Hoshimati Suisei': 'assets/character-pics/suisei-pic.png',
-    'Usada Pekora': 'assets/character-pics/pekora-pic.jpg',
-    'Pomu Rainpuff': 'assets/character-pics/pomu-pic.jpg',
-    'Nakiri Ayame': 'assets/character-pics/ayame-pic.jpg'
+    'Usada Pekora': 'assets/character-pics/pekora-pic.png',
+    'Pomu Rainpuff': 'assets/character-pics/pomu-pic.png',
+    'Nakiri Ayame': 'assets/character-pics/ayame-pic.png'
 };
 
 export let userTwitter = {

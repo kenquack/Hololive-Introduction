@@ -27,6 +27,17 @@ export function features() {
 
     };
 
+    function closeThruCanvas() {
+        let icons = Array.from( document.getElementsByClassName('character') );
+        for (let i = 0; i < icons.length; i++) {
+            if (!icons[i].hasAttribute('hidden')) {
+                icons[i].toggleAttribute('hidden');
+                turnOffBlur();
+                unselectPics();
+            };
+        };
+    };
+
     function unselectPics() {
         let icons = Array.from( document.getElementsByClassName('icons') );
         for (let i = 0; i < icons.length; i++) {
@@ -51,15 +62,22 @@ export function features() {
         let div = document.getElementById(id);
         let iconIndex = icons.indexOf(div);
 
-        icons[iconIndex].setAttribute('class', 'transform')
+        icons[iconIndex].classList.add('transform')
     };
 
     function addListeners(){
         let icon = document.getElementsByClassName('profile-icon');
         for(let i = 0; i < icon.length; i++) {
             icon[i].addEventListener("click", onClick); 
+            icon[i].addEventListener("click", onClickTransition);
         };
     };
 
+    function addCanvasListener() {
+        let canvas = document.getElementById('canvas')
+        canvas.addEventListener("click", closeThruCanvas);
+    };
+
     addListeners();
+    addCanvasListener();
 };

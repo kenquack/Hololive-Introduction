@@ -27,11 +27,11 @@ h1 {
   font-size: 80px;
   position: absolute;
   top: 5%;
-  right: 32%;
+  right: 35%;
   text-align: center;
   margin: 0px;
   padding: 0px;
-  font-family:'Courier New', Courier, monospace;
+  font-family: 'Alegreya Sans SC';
   color: white;
 }
 
@@ -68,6 +68,7 @@ ul {
   width: 50%;
   background: rgba(210, 111, 250, 0.3);
   overflow-y: auto;
+  transition-duration: 4s;
 }
 
 .character {
@@ -95,18 +96,41 @@ ul {
   margin-left: auto;
   margin-right: auto;
   height: 30%;
-  width: 30%;
+  width: 32%;
   border-radius: 50%;
   border: 3px double rgb(247, 163, 228);
   box-shadow: 0px 3px 5px rgb(179, 107, 173);
 }
 
+.profile-icon:hover {
+  height: 32%;
+  width: 34%;
+  box-shadow: 0px 3px 10px rgb(255, 204, 251);
+  cursor: pointer;
+}
 .link {
   float: left;
   display: flex;
   
   padding-top: 15px;
   padding-right: 15px;
+}
+
+.transform {
+  animation: fadeIn 1.5s;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+img[id = 'Hoshimati Suisei-icon'] {
+  width: 33%;
+}
+
+img[id = 'Pomu Rainpuff-icon'] {
+  width: 33%;
 }
 
 // ------------------------ custom scrollbar
