@@ -30,42 +30,6 @@ export function createElements() {
         btn.src = userIcons[user];
     };
 
-    let currentChar;
-
-    function onClick() {
-        let icons = Array.from( document.getElementsByClassName('character') );
-        let id = this.id.split("-")[0];
-        let div = document.getElementById(id)
-        let skipIndex = icons.indexOf(div)
-
-        for(let i = 0; i < icons.length; i++) {
-            if (i !== skipIndex) {
-                icons[i].setAttribute('hidden', true);
-            };
-        };
-        
-        toggleBlur(); //doesn't keep blur when clicking on another pic
-        div.toggleAttribute('hidden');
-
-    };
-    
-    
-    function toggleBlur() {
-        let bg = document.getElementById('canvas');
-        if (bg.hasAttribute('class', 'blur')) {
-            bg.removeAttribute('class', 'blur');
-        } else {
-            bg.setAttribute('class', 'blur')
-        };
-    };
-
-    function addListeners(){
-        let icon = document.getElementsByClassName('profile-icon');
-        for(let i = 0; i < icon.length; i++) {
-            icon[i].addEventListener("click", onClick);
-        };
-    };
-
     function addLinks() {
         let users = Object.keys(usersHash);
 
@@ -119,7 +83,6 @@ export function createElements() {
 
     
     createButtons();
-    addListeners();
     addLinks();
     addPhotos();
 };
