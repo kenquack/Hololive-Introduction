@@ -1,7 +1,8 @@
 import { userKeys as usersHash } from "./users";
-import { userPictures } from "./users";
+import { userIcons } from "./users";
 import { userTwitter } from "./users";
 import { userYoutube } from "./users";
+import { userPhotos } from "./users";
 
 export function createElements() {
 
@@ -26,22 +27,36 @@ export function createElements() {
 
     function setSrc(user) {
         let btn = document.getElementById(`${user}-icon`);
-        btn.src = userPictures[user];
+        btn.src = userIcons[user];
     };
+
+    let currentChar;
 
     function onClick() {
         let icons = Array.from( document.getElementsByClassName('character') );
         let id = this.id.split("-")[0];
         let div = document.getElementById(id)
         let skipIndex = icons.indexOf(div)
+
         for(let i = 0; i < icons.length; i++) {
             if (i !== skipIndex) {
                 icons[i].setAttribute('hidden', true);
             };
         };
-
-        blurBG();
+        
+        toggleBlur(); //doesn't keep blur when clicking on another pic
         div.toggleAttribute('hidden');
+
+    };
+    
+    
+    function toggleBlur() {
+        let bg = document.getElementById('canvas');
+        if (bg.hasAttribute('class', 'blur')) {
+            bg.removeAttribute('class', 'blur');
+        } else {
+            bg.setAttribute('class', 'blur')
+        };
     };
 
     function addListeners(){
@@ -79,17 +94,32 @@ export function createElements() {
         user.appendChild(a);
     };
 
-    // blur not toggling right
-    function blurBG() {
-        let bg = document.getElementById('canvas');
-        if (bg.hasAttribute('class', 'blur')) {
-            bg.removeAttribute('class', 'blur');
-        } else {
-            bg.setAttribute('class', 'blur')
+    function addPhotos() {
+        let users = Object.keys(usersHash);
+
+        for(let i = 0; i < users.length; i++) {
+            let userDiv = document.getElementById(`${users[i]}`);
+            let container = document.createElement('div');
+            let pic = document.createElement('img');
+
+            container.setAttribute('class', 'photo');
+            userDiv.appendChild(container);
+            container.appendChild(pic);
+            pic.setAttribute('class', 'char-photo');
+            pic.setAttribute('id', `${users[i]}-pic`);
+
+            setSrc2(users[i]);
         };
     };
+
+    function setSrc2(user) {
+        let btn = document.getElementById(`${user}-pic`);
+        btn.src = userPhotos[user];
+    }
+
     
     createButtons();
     addListeners();
     addLinks();
+    addPhotos();
 };

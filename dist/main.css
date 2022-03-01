@@ -24,7 +24,7 @@ body {
   -moz-filter: blur(5px);
   -o-filter: blur(5px);
   -ms-filter: blur(5px);
-  filter: blur(5px);
+  filter: blur(10px);
   background: -moz-linear-gradient(top, #11e8bb 0%, #ca68ff 100%);
   background: -webkit-linear-gradient(top, #11e8bb 0%, #ca68ff 100%);
   background: linear-gradient(to bottom, #11e8bb 0%, #ca68ff 100%);
@@ -44,19 +44,28 @@ h1 {
   width: 10%;
 }
 
-li {
+ul {
+  margin: 0;
+  padding: 0;
   list-style-type: none;
 }
 
-.character {
+.character h2 {
   text-align: center;
+}
+
+.character {
+  text-align: left;
+  padding-left: 2%;
+  padding-right: 2%;
   font-size: xx-large;
   position: absolute;
   top: 20%;
-  right: 35%;
+  right: 22%;
   height: 50%;
-  width: 30%;
-  background: rgba(53, 211, 211, 0.3);
+  width: 50%;
+  background: rgba(210, 111, 250, 0.3);
+  overflow-y: auto;
 }
 
 #profiles {
@@ -83,5 +92,8 @@ li {
 }
 
 .link {
-  padding: 10px;
+  float: left;
+  display: flex;
+  padding-top: 15px;
+  padding-right: 15px;
 }
