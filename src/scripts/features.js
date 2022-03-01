@@ -1,5 +1,5 @@
 export function features() {
-    
+
     function onClick() {
         let icons = Array.from( document.getElementsByClassName('character') );
         let toggle = Array.from( document.getElementsByClassName('icons') );
@@ -44,6 +44,15 @@ export function features() {
         let bg = document.getElementById('canvas');
         bg.removeAttribute('class', 'blur');
     }
+
+    function onClickTransition() {
+        let icons = Array.from( document.getElementsByClassName('character') );
+        let id = this.id.split("-")[0];
+        let div = document.getElementById(id);
+        let iconIndex = icons.indexOf(div);
+
+        icons[iconIndex].setAttribute('class', 'transform')
+    };
 
     function addListeners(){
         let icon = document.getElementsByClassName('profile-icon');

@@ -5,11 +5,8 @@ html {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: #11e8bb;
-  background: -moz-linear-gradient(top, #11e8bb 0%, #ca68ff 100%);
-  background: -webkit-linear-gradient(top, #11e8bb 0%, #ca68ff 100%);
-  background: linear-gradient(to bottom, #11e8bb 0%, #ca68ff 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#11e8bb", endColorstr="#ca68ff",GradientType=0 );
+  background: #48fad3;
+  background: linear-gradient(to bottom, #48fad3 0%, #da97ff 100%);
 }
 
 body {
@@ -20,10 +17,6 @@ body {
 }
 
 .blur {
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
   filter: blur(10px);
   background: -moz-linear-gradient(top, #11e8bb 0%, #ca68ff 100%);
   background: -webkit-linear-gradient(top, #11e8bb 0%, #ca68ff 100%);
@@ -32,6 +25,10 @@ body {
 }
 
 h1 {
+  font-size: 80px;
+  position: absolute;
+  top: 5%;
+  right: 32%;
   text-align: center;
   margin: 0px;
   padding: 0px;
@@ -74,9 +71,16 @@ ul {
   overflow-y: auto;
 }
 
+.character {
+  border: solid;
+  border-width: 5px;
+  border-image: linear-gradient(180deg, #86e8f5, #cc72f0) 1 round;
+}
+
 #profiles {
-  height: 100%;
-  width: 100%;
+  margin-left: 10%;
+  height: 90%;
+  width: 80%;
 }
 
 .icons {
@@ -92,8 +96,8 @@ ul {
   padding: 5%;
   margin-left: auto;
   margin-right: auto;
-  height: 40%;
-  width: 40%;
+  height: 30%;
+  width: 30%;
   border-radius: 50%;
 }
 
