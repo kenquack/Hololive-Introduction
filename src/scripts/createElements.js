@@ -7,10 +7,16 @@ export function createElements() {
 
     function createButtons() {
         let users = Object.keys(usersHash);
+        let profile = document.createElement('div');
+        profile.setAttribute('id', 'profiles');
+        document.body.appendChild(profile);
 
         for(let i = 0; i < users.length; i++) {
+            let container = document.createElement("div");
             let pic = document.createElement("img");
-            document.body.appendChild(pic);
+            profile.appendChild(container);
+            container.appendChild(pic);
+            container.setAttribute('class', 'icons')
             pic.setAttribute('class', 'profile-icon');
             pic.setAttribute('id', `${users[i]}-icon`);
 
@@ -34,6 +40,7 @@ export function createElements() {
             };
         };
 
+        blurBG();
         div.toggleAttribute('hidden');
     };
 
@@ -59,6 +66,7 @@ export function createElements() {
         a.innerHTML = "Twitter";
         a.href = userTwitter[user.id];
         a.setAttribute('target', '_blank');
+        a.setAttribute('class', 'link')
         user.appendChild(a);
     };
 
@@ -67,9 +75,19 @@ export function createElements() {
         a.innerHTML = "Youtube";
         a.href = userYoutube[user.id];
         a.setAttribute('target', '_blank');
+        a.setAttribute('class', 'link')
         user.appendChild(a);
     };
 
+    // blur not toggling right
+    function blurBG() {
+        let bg = document.getElementById('canvas');
+        if (bg.hasAttribute('class', 'blur')) {
+            bg.removeAttribute('class', 'blur');
+        } else {
+            bg.setAttribute('class', 'blur')
+        };
+    };
     
     createButtons();
     addListeners();
