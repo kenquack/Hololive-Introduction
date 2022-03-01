@@ -3,6 +3,7 @@ import { userIcons } from "./users";
 import { userTwitter } from "./users";
 import { userYoutube } from "./users";
 import { userPhotos } from "./users";
+import { userDescription } from "./users";
 
 export function createElements() {
 
@@ -35,9 +36,19 @@ export function createElements() {
 
         for(let i = 0; i < users.length; i++) {
             let userDiv = document.getElementById(`${users[i]}`);
+            console.log(userDiv);
+            addDescription(userDiv);
             addTwitter(userDiv);
             addYoutube(userDiv);
-        }
+        };
+    };
+
+    function addDescription(user) {
+        let p = document.createElement('p');
+        p.setAttribute('class', 'description');
+        p.setAttribute('id', `${user}-description`);
+        p.innerHTML = userDescription[user.id];
+        user.appendChild(p);
     }
 
     function addTwitter(user){
