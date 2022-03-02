@@ -36,7 +36,6 @@ export function createElements() {
 
         for(let i = 0; i < users.length; i++) {
             let userDiv = document.getElementById(`${users[i]}`);
-            console.log(userDiv);
             addDescription(userDiv);
             addTwitter(userDiv);
             addYoutube(userDiv);
@@ -45,27 +44,49 @@ export function createElements() {
 
     function addDescription(user) {
         let p = document.createElement('p');
+        let label = document.createElement('label');
+
+        label.innerHTML = 'Description'
+        label.setAttribute('class', 'label');
+        label.setAttribute('id', `${user.id}-description-label`)
         p.setAttribute('class', 'description');
-        p.setAttribute('id', `${user}-description`);
+        p.setAttribute('id', `${user.id}-description`);
+
         p.innerHTML = userDescription[user.id];
-        user.appendChild(p);
+        user.appendChild(label);
+        label.appendChild(p);
     }
 
     function addTwitter(user){
         let a = document.createElement('a');
-        a.innerHTML = "Twitter";
+        let image = document.createElement('img');
+
+        image.setAttribute('src', 'assets/logos/Twitter-Logo-Square.png');
+        image.setAttribute('class', 'img')
+
+        // a.innerHTML = "Twitter";
+        a.appendChild(image);
         a.href = userTwitter[user.id];
         a.setAttribute('target', '_blank');
-        a.setAttribute('class', 'link')
+        a.setAttribute('class', 'link');
+        
         user.appendChild(a);
     };
 
     function addYoutube(user){
         let a = document.createElement('a');
-        a.innerHTML = "Youtube";
+        let image = document.createElement('img');
+
+        image.setAttribute('src', 'assets/logos/youtube-logo.png');
+        image.setAttribute('class', 'img')
+
+        // a.innerHTML = "Youtube";
+        a.appendChild(image);
         a.href = userYoutube[user.id];
         a.setAttribute('target', '_blank');
-        a.setAttribute('class', 'link')
+        a.setAttribute('class', 'link');
+    
+        console.log(user);
         user.appendChild(a);
     };
 

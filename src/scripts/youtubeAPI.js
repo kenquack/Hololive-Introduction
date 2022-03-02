@@ -17,6 +17,12 @@ export function loadYoutubeStats() {
             let header = document.createElement('h2');
             let user = document.createElement('div');
             let userList = document.createElement('ul');
+            let label = document.createElement('label');
+
+            //label
+            label.setAttribute('class', 'label');
+            label.setAttribute('id', `${users[i]}-stats-label`);
+            label.innerHTML = "Stats"
             
             //user div
             header.innerHTML = users[i];
@@ -29,7 +35,8 @@ export function loadYoutubeStats() {
             userList.setAttribute('id', `${users[i]}-list`);
             document.body.appendChild(container);
             container.appendChild(user);
-            user.appendChild(userList);
+            user.appendChild(label);
+            label.appendChild(userList);
 
             getViewcount(users[i]);
             getSubscribers(users[i]);
