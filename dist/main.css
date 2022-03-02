@@ -48,7 +48,7 @@ h1 {
   width: 25%;
   font-family: "Alegreya Sans SC";
   font-style: italic;
-  color: #e5fcfd;
+  color: #f1feff;
 }
 
 #characters {
@@ -92,8 +92,8 @@ li {
   font-weight: 400;
   width: 80%;
   color: #cdfdff;
-  font-size: 24px;
   font-family: Alegreya Sans SC;
+  font-size: 24px;
   text-shadow: 0px 3px 3px #5f8a92;
   padding-top: 2%;
   padding-left: 5%;
@@ -105,7 +105,7 @@ li:last-child {
 
 .photo {
   position: relative;
-  bottom: 60%;
+  bottom: 50vh;
 }
 
 a {
@@ -214,6 +214,26 @@ img[id="Pomu Rainpuff-icon"] {
 .img {
   padding: 0;
   height: 60px;
+}
+
+.social:first-of-type {
+  position: absolute;
+  bottom: 97vh;
+  right: 13vh;
+  color: #005457;
+  font-family: Alegreya Sans SC;
+  font-weight: bold;
+  font-size: 1.5vh;
+}
+
+.social:last-of-type {
+  position: absolute;
+  bottom: 97vh;
+  right: 5vh;
+  color: #005457;
+  font-family: Alegreya Sans SC;
+  font-weight: bold;
+  font-size: 1.5vh;
 }
 
 div::-webkit-scrollbar {
