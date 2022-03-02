@@ -1,0 +1,239 @@
+/* html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    
+    background: #48fad3;
+    background: linear-gradient(to bottom,  #48fad3 0%,#da97ff 100%); 
+  }
+  
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .blur {
+    filter: blur(10px);
+    background: linear-gradient(to bottom,  #11e8bb 0%,#ce7bfa 100%);
+    opacity: 0.9;
+  };
+  
+  h1 {
+    text-shadow: 2px 3px 5px rgb(54, 111, 116);
+    font-size: 80px;
+    position: absolute;
+    top: 5%;
+    right: 32%;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Alegreya Sans SC';
+    color: white;
+  }
+  
+  // p {
+  //   padding: 2%;
+  //   font-size: 24px;
+  //   position: relative;
+  //   top: 15%;
+  //   width: 28%;
+  //   font-family: 'Alegreya Sans SC';
+  //   color: rgb(229, 252, 253);
+  //   animation: slide 0.5s forwards;
+  //   animation-delay: 2s;
+  // }
+  
+  // @keyframes slide {
+  //   100% { left: 0; }
+  // }
+  
+  #characters {
+    height: 10%;
+    width: 10%;
+  };
+  
+  .char-photo {
+    float: right;
+    height: 90%;
+    width: 40%;
+  }
+  
+  ul {
+    background: rgba(200, 253, 255, 0.1);
+    width: 40%;
+    text-align: left;
+    padding: 0;
+    list-style-type: none;
+    border-radius: 5%;
+  }
+  
+  .character h2 {
+    font-size: 55px;
+    color: rgb(205, 253, 255);
+    font-family: Alegreya Sans SC;
+    text-align: center;
+    text-shadow: 0px 3px 5px rgb(98, 145, 153);
+  }
+  
+  .label {
+    font-weight: bold;
+    width: 100%;
+    color: rgb(227, 254, 255);
+    font-size: 28px;
+    font-family: Alegreya Sans SC;
+    padding-left: 1%;
+  }
+  
+  li {
+    font-weight: 400;
+    width: 80%;
+    color: rgb(205, 253, 255);
+    font-size: 24px;
+    font-family: Alegreya Sans SC;
+    text-shadow: 0px 3px 3px rgb(95, 138, 146);
+    padding-top: 2%;
+    padding-left: 5%;
+  }
+  
+  li:last-child {
+    padding-bottom: 2%;
+  }
+  
+  .photo {
+    position: relative;
+    bottom: 60%;
+  }
+  
+  a {
+    font-size: 20px;
+    margin-left: 3%;
+  }
+  
+  a:hover {
+    cursor: pointer;
+  }
+  
+  .character{
+    text-align: left;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: xx-large;
+    position: absolute;
+    top: 10%;
+    right: 22%;
+    height: 60%;
+    width: 50%;
+    background: rgba(217, 139, 248, 0.3);
+    overflow-y: auto;
+    transition-duration: 4s;
+  }
+  
+  .character {
+    border: solid;
+    border-width: 5px;
+    border-image: linear-gradient(180deg, rgb(134, 232, 245), rgb(204, 114, 240)) 1 round;
+  }
+  
+  .description {
+    font-weight: 400;
+    padding-left: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 1%;
+    color: rgb(205, 253, 255);
+    text-shadow: 0px 3px 4px rgb(112, 160, 168);
+    font-size: 24px;
+    width: 50%;
+    background: rgba(200, 253, 255, 0.1);
+    border-radius: 5%;
+  }
+  
+  #profiles {
+    margin-left: 13%;
+    height: 90%;
+    width: 80%;
+  }
+  
+  .icons {
+    float: left;
+    height: 35%;
+    width: 18%;
+  }
+  
+  .profile-icon {
+    position: relative;
+    bottom: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30%;
+    width: 32%;
+    border-radius: 50%;
+    border: 3px double rgb(247, 163, 228);
+    box-shadow: 0px 3px 5px rgb(179, 107, 173);
+  }
+  
+  .profile-icon:hover {
+    height: 32%;
+    width: 34%;
+    box-shadow: 0px 3px 10px rgb(255, 204, 251);
+    cursor: pointer;
+  }
+  .link {
+    float: left;
+    display: flex;
+    
+    padding-top: 15px;
+    padding-right: 15px;
+  }
+  
+  .transform {
+    animation: fadeIn 1.5s;
+  }
+  
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  
+  img[id = 'Hoshimati Suisei-icon'] {
+    width: 33%;
+  }
+  
+  img[id = 'Pomu Rainpuff-icon'] {
+    width: 33%;
+  }
+  
+  .img {
+    padding: 0;
+    height: 60px;
+    // width: 50px;
+  }
+  
+  // ------------------------ custom scrollbar
+  
+  div::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  div::-webkit-scrollbar-track {
+    background: linear-gradient(to bottom,  #11e8bb 0%,#ca68ff 100%);
+    border-radius: 10px;
+  }
+  
+  div::-webkit-scrollbar-thumb {
+    background: rgb(108, 226, 226);
+    border-radius: 10px;
+  }
+  
+  div::-webkit-scrollbar-thumb:hover {
+    background: rgb(72, 173, 173);
+    border-radius: 10px;
+  }
+  
+  div::-webkit-scrollbar-thumb:active {
+    background: rgb(72, 173, 173);
+    border-radius: 10px;
+  } */

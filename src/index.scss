@@ -22,7 +22,7 @@ body {
 
 h1 {
   text-shadow: 2px 3px 5px rgb(54, 111, 116);
-  font-size: 80px;
+  font-size: 8vh;
   position: absolute;
   top: 5%;
   right: 32%;
@@ -33,21 +33,21 @@ h1 {
   color: white;
 }
 
-// p {
-//   padding: 2%;
-//   font-size: 24px;
-//   position: relative;
-//   top: 15%;
-//   width: 28%;
-//   font-family: 'Alegreya Sans SC';
-//   color: rgb(229, 252, 253);
-//   animation: slide 0.5s forwards;
-//   animation-delay: 2s;
-// }
+#bio-container {
+  position: absolute;
+}
 
-// @keyframes slide {
-//   100% { left: 0; }
-// }
+#bio {
+  padding: 2%;
+  font-size: 2vh;
+  position: relative;
+  top: 20vh;
+  left: 3vh;
+  width: 25%;
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  color: rgb(229, 252, 253);
+}
 
 #characters {
   height: 10%;
