@@ -86,7 +86,6 @@ export function createElements() {
         a.setAttribute('target', '_blank');
         a.setAttribute('class', 'link');
     
-        console.log(user);
         user.appendChild(a);
     };
 
