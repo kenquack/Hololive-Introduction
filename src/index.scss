@@ -1,7 +1,7 @@
 html {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  // overflow: hidden;
   
   background: #48fad3;
   background: linear-gradient(to bottom,  #48fad3 0%,#da97ff 100%); 
@@ -13,12 +13,6 @@ body {
   margin: 0px;
   padding: 0px;
 }
-
-.blur {
-  filter: blur(10px);
-  background: linear-gradient(to bottom,  #11e8bb 0%,#ce7bfa 100%);
-  opacity: 0.9;
-};
 
 h1 {
   text-shadow: 2px 3px 5px rgb(54, 111, 116);
@@ -32,6 +26,12 @@ h1 {
   font-family: 'Alegreya Sans SC';
   color: white;
 }
+
+.blur {
+  filter: blur(10px);
+  background: linear-gradient(to bottom,  #11e8bb 0%,#ce7bfa 100%);
+  opacity: 0.9;
+};
 
 #bio-container {
   position: absolute;
@@ -47,169 +47,6 @@ h1 {
   font-family: 'Alegreya Sans SC';
   font-style: italic;
   color: rgb(241, 254, 255);
-}
-
-#characters {
-  height: 10%;
-  width: 10%;
-};
-
-.char-photo {
-  float: right;
-  height: 90%;
-  width: 40%;
-}
-
-ul {
-  background: rgba(200, 253, 255, 0.1);
-  width: 40%;
-  text-align: left;
-  padding: 0;
-  list-style-type: none;
-  border-radius: 5%;
-}
-
-.character h2 {
-  font-size: 55px;
-  color: rgb(205, 253, 255);
-  font-family: Alegreya Sans SC;
-  text-align: center;
-  text-shadow: 0px 3px 5px rgb(98, 145, 153);
-}
-
-.label {
-  font-weight: bold;
-  width: 100%;
-  color: rgb(227, 254, 255);
-  font-size: 28px;
-  font-family: Alegreya Sans SC;
-  padding-left: 1%;
-}
-
-li {
-  font-weight: 400;
-  width: 80%;
-  color: rgb(205, 253, 255);
-  font-family: Alegreya Sans SC;
-  font-size: 24px;
-  text-shadow: 0px 3px 3px rgb(95, 138, 146);
-  padding-top: 2%;
-  padding-left: 5%;
-}
-
-li:last-child {
-  padding-bottom: 2%;
-}
-
-.photo {
-  position: relative;
-  bottom: 50vh;
-}
-
-a {
-  font-size: 20px;
-  margin-left: 3%;
-}
-
-a:hover {
-  cursor: pointer;
-}
-
-.character{
-  text-align: left;
-  padding-left: 2%;
-  padding-right: 2%;
-  font-size: xx-large;
-  position: absolute;
-  top: 10%;
-  right: 22%;
-  height: 60%;
-  width: 50%;
-  background: rgba(217, 139, 248, 0.3);
-  overflow-y: auto;
-  transition-duration: 4s;
-}
-
-.character {
-  border: solid;
-  border-width: 5px;
-  border-image: linear-gradient(180deg, rgb(134, 232, 245), rgb(204, 114, 240)) 1 round;
-}
-
-.description {
-  font-weight: 400;
-  padding-left: 2%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  padding-right: 1%;
-  color: rgb(205, 253, 255);
-  text-shadow: 0px 3px 4px rgb(112, 160, 168);
-  font-size: 24px;
-  width: 50%;
-  background: rgba(200, 253, 255, 0.1);
-  border-radius: 5%;
-}
-
-#profiles {
-  margin-left: 13%;
-  height: 90%;
-  width: 80%;
-}
-
-.icons {
-  float: left;
-  height: 35%;
-  width: 18%;
-}
-
-.profile-icon {
-  position: relative;
-  bottom: 100%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: 30%;
-  width: 32%;
-  border-radius: 50%;
-  border: 3px double rgb(247, 163, 228);
-  box-shadow: 0px 3px 5px rgb(179, 107, 173);
-}
-
-.profile-icon:hover {
-  height: 32%;
-  width: 34%;
-  box-shadow: 0px 3px 10px rgb(255, 204, 251);
-  cursor: pointer;
-}
-.link {
-  float: left;
-  display: flex;
-  
-  padding-top: 15px;
-  padding-right: 15px;
-}
-
-.transform {
-  animation: fadeIn 1.5s;
-}
-
-@keyframes fadeIn {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-}
-
-img[id = 'Hoshimati Suisei-icon'] {
-  width: 33%;
-}
-
-img[id = 'Pomu Rainpuff-icon'] {
-  width: 33%;
-}
-
-.img {
-  padding: 0;
-  height: 60px;
-  // width: 50px;
 }
 
 .social:first-of-type {
@@ -232,6 +69,191 @@ img[id = 'Pomu Rainpuff-icon'] {
   font-size: 1.5vh;
 }
 
+#profiles {
+  position: absolute;
+  bottom: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background: 
+    linear-gradient(
+      to left, 
+      rgb(50, 218, 230) 0%,
+      rgb(59, 192, 181) 15%,
+      rgb(250, 116, 255) 65%,
+      rgb(218, 68, 210) 100%
+    )
+    bottom
+    no-repeat; 
+  background-size: 100% 2px ;
+}
+
+.profile-icon {
+  border-radius: 50%;
+  border: 3px double rgb(247, 163, 228);
+  box-shadow: 0px 3px 5px rgb(179, 107, 173);
+}
+
+.profile-icon:hover {
+  box-shadow: 0px 3px 10px rgb(255, 204, 251);
+  cursor: pointer;
+  height: 60%;
+}
+
+.character h2 {
+  font-size: 5vh;
+  color: rgb(205, 253, 255);
+  font-family: Alegreya Sans SC;
+  text-align: center;
+  text-shadow: 0px 3px 5px rgb(98, 145, 153);
+}
+
+.character{
+  text-align: left;
+  position: absolute;
+  top: 10vh;
+  height: 60vh;
+  width: 103vh;
+  background: rgba(217, 139, 248, 0.3);
+  overflow-y: auto;
+  transition-duration: 4s;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  padding-left: 2vh;
+  padding-right: 4vh;
+}
+
+.character {
+  border: solid;
+  border-width: 5px;
+  border-image: linear-gradient(180deg, rgb(134, 232, 245), rgb(204, 114, 240)) 1 round;
+}
+
+.transform {
+  animation: fadeIn 1.5s;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.photo {
+  position: relative;
+  bottom: 60vh;
+}
+
+.photo > * {
+  height: 65vh;
+}
+
+.char-photo {
+  float: right;
+}
+
+#Kanae-pic {
+  padding-top: 10vh;
+}
+
+img[id="Pomu Rainpuff-pic"] {
+  padding-top: 5vh;
+}
+
+ul {
+  background: rgba(200, 253, 255, 0.1);
+  width: 30vh;
+  text-align: left;
+  margin-left: 2vh;
+  list-style-type: none;
+  border-radius: 5%;
+  padding-left: 2vh;
+}
+
+.label {
+  font-weight: bold;
+  width: 100%;
+  color: rgb(227, 254, 255);
+  font-size: 26px;
+  font-family: Alegreya Sans SC;
+  padding-left: 2vh;
+}
+
+li {
+  font-weight: 400;
+  width: 80%;
+  color: rgb(205, 253, 255);
+  font-family: Alegreya Sans SC;
+  font-size: 20px;
+  text-shadow: 0px 3px 3px rgb(108, 153, 161);
+  padding-top: 2%;
+  
+}
+
+li:last-child {
+  padding-bottom: 1vh;
+}
+
+.description {
+  font-weight: 400;
+  margin-left: 2vh;
+  padding-left: 2vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-right: 1vh;
+  color: rgb(205, 253, 255);
+  text-shadow: 0px 3px 4px rgb(112, 160, 168);
+  font-size: 20px;
+  width: 48vh;
+  background: rgba(200, 253, 255, 0.1);
+  border-radius: 5%;
+}
+
+.img {
+  padding: 15px;
+  height: 50px;
+  // width: 50px;
+}
+
+
+// scroll bar
+
+#profiles {
+  width: 100vh; //adjust to choose how many icons show
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; //have to add 1fr for every addtional character added
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "div div div";
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.3fr 1fr auto 1fr;
+    grid-template-areas: "div";
+  }
+}
+
+#profiles {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+#profiles.active {
+  cursor: grabbing;
+  transform: scale(1);
+}
+
+.icons {
+  display: inline-block;
+}
+
+.profile-icon {
+  width: 10vh; //icon size
+  height: 10vh;
+  margin: 2em 3em;
+}
 
 // ------------------------ custom scrollbar
 
@@ -258,4 +280,3 @@ div::-webkit-scrollbar-thumb:active {
   background: rgb(72, 173, 173);
   border-radius: 10px;
 }
-
