@@ -21,8 +21,10 @@
     "css-loader": "^6.6.0",
     "mini-css-extract-plugin": "^2.5.3",
     "regenerator-runtime": "^0.13.9",
+    "rellax": "^1.12.1",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
+    "simple-parallax-js": "^5.6.2",
     "three": "^0.138.0",
     "webpack": "^5.69.1",
     "webpack-cli": "^4.9.2"
