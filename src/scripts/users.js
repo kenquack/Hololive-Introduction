@@ -35,7 +35,7 @@ export let userPhotos = {
 };
 
 export let userTwitter = {
-    'Gawr Gura': 'https://twitter.com/virtual_kaf',
+    'Gawr Gura': 'https://twitter.com/gawrgura',
     'Hoshimati Suisei': 'https://twitter.com/suisei_hosimati',
     'Usada Pekora': 'https://twitter.com/usadapekora',
     'Pomu Rainpuff': 'https://twitter.com/PomuRainpuff',
