@@ -11,10 +11,13 @@ Users will be able to:
 * Enjoy the beautiful 3D model built with three js
 ## Architecture and technologies
 The project uses the following technologies:
-*`Javascript` for scrolling logic, interactivity, and creating HTML elements
-*`Three js` for visualization
-*`Youtube API` for vtuber statistics
-*`Webpack` for bundling JS files
+* `Javascript` for scrolling logic, interactivity, and creating HTML elements
+* `Three js` for visualization
+* `Youtube API` for vtuber statistics
+* `Webpack` for bundling JS files
+
+![](assets/gifs/scrollbar1.gif)
+
 I was able to create a nav bar that can be scrolled by being dragged. To achieve this, I found the document that I was targeting as well as set some variables that I would need later.
 ```
 const slider = document.querySelector('#profiles');
