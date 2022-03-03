@@ -1,4 +1,6 @@
 # The World of Vtubers
+Working link: https://kenquack.github.io/The-World-of-Vtubers/
+
 The World of Vtubers is simply a site to introduce the general public to the talents and awesomeness of Vtubers. Look through the available features and find your virtual waifu today!
 ## Functionality & MVPs
 * Users will be able to discover different talents
