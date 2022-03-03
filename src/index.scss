@@ -145,10 +145,14 @@ h1 {
 }
 
 #Kanae-pic {
-  padding-top: 10vh;
+  // padding-top: 0vh;
 }
 
 img[id="Pomu Rainpuff-pic"] {
+  padding-top: 5vh;
+}
+
+img[id="Kizuna Ai-pic"] {
   padding-top: 5vh;
 }
 
@@ -211,7 +215,7 @@ li:last-child {
 // scroll bar
 
 #profiles {
-  width: 100vh; //adjust to choose how many icons show
+  width: 110vh; //adjust to choose how many icons show
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; //have to add 1fr for every addtional character added
   grid-template-rows: auto 1fr auto;
