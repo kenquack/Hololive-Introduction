@@ -89,25 +89,6 @@ export function createElements() {
         user.appendChild(a);
     };
 
-    // function addSocials() {
-    //     let link = document.createElement('a');
-    //     let github = document.createElement('a');
-    //     let container = document.createElement('div');
-        
-    //     container.setAttribute('class', 'socials');
-    //     link.setAttribute('class', 'social');
-    //     github.setAttribute('class', 'social');
-    //     link.innerHTML = 'LinkedIn'
-    //     github.innerHTML = 'Github'
-
-    //     link.href = 'https://www.linkedin.com/in/kennethquach/';
-    //     github.href = 'https://github.com/kenquack';
-
-    //     document.body.appendChild(container);
-    //     container.appendChild(github);
-    //     container.appendChild(link);
-    // }
-
     function addPhotos() {
         let users = Object.keys(usersHash);
 
@@ -135,5 +116,4 @@ export function createElements() {
     createButtons();
     addLinks();
     addPhotos();
-    // addSocials();
 };

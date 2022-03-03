@@ -11,8 +11,6 @@ export function loadYoutubeStats() {
         let container = document.createElement('div');
         container.setAttribute('id', 'characters');
 
-        //document append container needs to amend border, border needs to amend user
-
         for(let i = 0; i < users.length; i++) {
             let header = document.createElement('h2');
             let user = document.createElement('div');
