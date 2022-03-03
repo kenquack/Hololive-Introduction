@@ -6,7 +6,7 @@ The World of Vtubers is simply a site to introduce the general public to the tal
 * Users will be able to discover different talents
 * Users will be able to interact with the 3D models
 * Link to youtube and twitter accounts of said talents
-* Show statistics using 3D js (subscriber count & total views)
+* Show statistics using D3 js (subscriber count & total views)
 ## Wireframe
 ![Illustration](https://user-images.githubusercontent.com/95385874/155655092-3b9c96ef-4ece-49e4-9638-746a2c64b6cc.png)
 * Links will include Github repo, LinkedIn, and idk my twitter
@@ -17,7 +17,7 @@ The World of Vtubers is simply a site to introduce the general public to the tal
 * Will throw in some other pages afterwards to fill up the site a bit more
 ## Technologies, Libraries, APIs
 * Three JS
-* 3D JS
+* D3 JS
 * Youtube API
 ## Implementation Timeline
 * Friday - Start setting up project, work on buttons that will navigate between slides.
