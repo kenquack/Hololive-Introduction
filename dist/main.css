@@ -78,8 +78,6 @@ h1 {
   left: 0;
   right: 0;
   text-align: center;
-  background: linear-gradient(to left, #32dae6 0%, #3bc0b5 15%, #fa74ff 65%, #da44d2 100%) bottom no-repeat;
-  background-size: 100% 2px;
 }
 
 .profile-icon {
@@ -227,7 +225,7 @@ li:last-child {
 }
 
 #profiles {
-  overflow-x: hidden;
+  overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
 }
@@ -247,26 +245,50 @@ li:last-child {
   margin: 2em 3em;
 }
 
-div::-webkit-scrollbar {
+.character::-webkit-scrollbar {
   width: 10px;
 }
 
-div::-webkit-scrollbar-track {
+.character::-webkit-scrollbar-track {
   background: linear-gradient(to bottom, #11e8bb 0%, #ca68ff 100%);
   border-radius: 10px;
 }
 
-div::-webkit-scrollbar-thumb {
+.character::-webkit-scrollbar-thumb {
   background: #6ce2e2;
   border-radius: 10px;
 }
 
-div::-webkit-scrollbar-thumb:hover {
+.character::-webkit-scrollbar-thumb:hover {
   background: #48adad;
   border-radius: 10px;
 }
 
-div::-webkit-scrollbar-thumb:active {
+.character::-webkit-scrollbar-thumb:active {
   background: #48adad;
   border-radius: 10px;
+}
+
+#profiles::-webkit-scrollbar {
+  height: 3px;
+  opacity: 1;
+}
+
+#profiles::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+#profiles::-webkit-scrollbar-thumb {
+  background: #f8feff;
+  border-radius: 5px;
+}
+
+#profiles::-webkit-scrollbar-thumb:hover {
+  background: #48adad;
+  border-radius: 5px;
+}
+
+#profiles::-webkit-scrollbar-thumb:active {
+  background: #48adad;
+  border-radius: 5px;
 }

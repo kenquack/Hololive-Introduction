@@ -77,17 +77,6 @@ h1 {
   left: 0;
   right: 0;
   text-align: center;
-  background: 
-    linear-gradient(
-      to left, 
-      rgb(50, 218, 230) 0%,
-      rgb(59, 192, 181) 15%,
-      rgb(250, 116, 255) 65%,
-      rgb(218, 68, 210) 100%
-    )
-    bottom
-    no-repeat; 
-  background-size: 100% 2px ;
 }
 
 .profile-icon {
@@ -235,7 +224,7 @@ li:last-child {
 }
 
 #profiles {
-  overflow-x: hidden;
+  overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
 }
@@ -257,26 +246,52 @@ li:last-child {
 
 // ------------------------ custom scrollbar
 
-div::-webkit-scrollbar {
+.character::-webkit-scrollbar {
   width: 10px;
 }
 
-div::-webkit-scrollbar-track {
+.character::-webkit-scrollbar-track {
   background: linear-gradient(to bottom,  #11e8bb 0%,#ca68ff 100%);
   border-radius: 10px;
 }
 
-div::-webkit-scrollbar-thumb {
+.character::-webkit-scrollbar-thumb {
   background: rgb(108, 226, 226);
   border-radius: 10px;
 }
 
-div::-webkit-scrollbar-thumb:hover {
+.character::-webkit-scrollbar-thumb:hover {
   background: rgb(72, 173, 173);
   border-radius: 10px;
 }
 
-div::-webkit-scrollbar-thumb:active {
+.character::-webkit-scrollbar-thumb:active {
   background: rgb(72, 173, 173);
   border-radius: 10px;
+}
+
+//---------------------
+
+#profiles::-webkit-scrollbar {
+  height: 3px;
+  opacity: 1;
+}
+
+#profiles::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+#profiles::-webkit-scrollbar-thumb {
+  background: rgb(248, 254, 255);
+  border-radius: 5px;
+}
+
+#profiles::-webkit-scrollbar-thumb:hover {
+  background: rgb(72, 173, 173);
+  border-radius: 5px;
+}
+
+#profiles::-webkit-scrollbar-thumb:active {
+  background: rgb(72, 173, 173);
+  border-radius: 5px;
 }
