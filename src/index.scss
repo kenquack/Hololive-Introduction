@@ -214,7 +214,7 @@ li:last-child {
 // scroll bar
 
 #profiles {
-  width: 110vh; //adjust to choose how many icons show
+  width: 100vh; //adjust to choose how many icons show
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; //have to add 1fr for every addtional character added
   grid-template-rows: auto 1fr auto;

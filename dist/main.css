@@ -210,7 +210,7 @@ li:last-child {
 }
 
 #profiles {
-  width: 110vh;
+  width: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto 1fr auto;
