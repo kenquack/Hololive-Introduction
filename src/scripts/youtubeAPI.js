@@ -4,7 +4,7 @@ import { userKeys } from "./users";
 
 export function loadYoutubeStats() {
 
-    const youtubeKey = 'AIzaSyCAs8UrQqjxDI8-lP2gUh-iq0pyhUmQnZw'; //API key
+    const youtubeKey = 'AIzaSyBiFISJkKKQaj6KhSlhjDEafRbZwjih8Cs'; //API key
 
     function setupHTML() {
         let users = Object.keys(userKeys);
